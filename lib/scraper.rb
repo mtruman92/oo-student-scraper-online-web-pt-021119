@@ -9,12 +9,12 @@ class Scraper
     student_list = []
         html = open(index_url)
       Nokogiri::HTML(open("http://142.93.56.73:34389/fixtures/student-site/"))
+      binding.pry
     list = Nokogiri::HTML(html)
     list.css(".student-card").collect do |student|
       student_list << {
         :name => list.css("h4.student-name").text,
         :location => list.css("p.student-location").text,
-        binding.pry
         :profile_url => "./fixtures/student-site/index.html" + list.css("a").attribute("href").value}
         end
         student_list
