@@ -14,11 +14,11 @@ class Scraper
         :name => list.css("h4.student-name").text,
         :location => list.css("p.student-location").text,
         :profile_url => "./fixtures/student-site/index.html" + list.css("a").attribute("href")
-        binding.pry
-      }
+              }
         end
         student_list
       end
+      binding.pry
 
   def self.scrape_profile_page(profile_url)
     
