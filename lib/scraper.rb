@@ -5,6 +5,7 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url)
+    binding.pry
     student_list = []
         html = open(index_url)
       Nokogiri::HTML(open("http://142.93.56.73:34389/fixtures/student-site/"))
@@ -18,7 +19,7 @@ class Scraper
         end
         student_list
       end
-      binding.pry
+     
 
   def self.scrape_profile_page(profile_url)
     
